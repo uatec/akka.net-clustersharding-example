@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "debugType": "portable",
+    "emitEntryPoint": true
+  },
+  "dependencies": {
+    "Akka": "1.1.2",
+    "Akka.Cluster": "1.1.2",
+    "Akka.Cluster.Sharding": "1.1.2.30-beta"
+  },
+  "frameworks": {
+    "net46": {}
+  }
+}

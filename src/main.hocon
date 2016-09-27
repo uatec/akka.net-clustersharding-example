@@ -1,0 +1,42 @@
+akka {
+    stdout-loglevel = DEBUG
+    loglevel = DEBUG
+    log-config-on-start = on 
+	actor {              
+        debug {  
+              receive = on 
+              autoreceive = on
+              lifecycle = on
+              event-stream = on
+              unhandled = on
+        }
+		provider = "Akka.Cluster.ClusterActorRefProvider, Akka.Cluster"
+	}
+	
+	remote {
+		log-remote-lifecycle-events = DEBUG
+		log-received-messages = on
+		
+		helios.tcp {
+			transport-class = "Akka.Remote.Transport.Helios.HeliosTcpTransport, Akka.Remote"
+			applied-adapters = []
+			transport-protocol = tcp
+			#will be populated with a dynamic host-name at runtime if left uncommented
+			public-hostname = "127.0.0.1"
+			hostname = "127.0.0.1"
+			port = 4053
+		}
+	}            
+	cluster {
+		#will inject this node as a self-seed node at run-time
+		seed-nodes = []
+#		seed-nodes = ["akka.tcp://birchd@127.0.0.1:9990"]
+		#seed-nodes = ["akka.tcp://birchd@127.0.0.1:4053"] #manually populate other seed nodes here, i.e. "akka.tcp://lighthouse@127.0.0.1:4053", "akka.tcp://lighthouse@127.0.0.1:4044"
+		roles = [server]
+		sharding {
+			role = "server"
+		}
+
+	    auto-down-unreachable-after = 10s
+	}
+}

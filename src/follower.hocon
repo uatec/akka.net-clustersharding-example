@@ -1,0 +1,10 @@
+akka {
+	remote {
+		helios.tcp {
+			port = 0
+		}
+	}            
+	cluster {
+		seed-nodes = ["akka.tcp://birchd@127.0.0.1:4053"] #manually populate other seed nodes here, i.e. "akka.tcp://lighthouse@127.0.0.1:4053", "akka.tcp://lighthouse@127.0.0.1:4044"
+	}
+}
