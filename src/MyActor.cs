@@ -7,6 +7,8 @@ namespace ConsoleApplication
     {
         public MyActor()
         {
+            Console.WriteLine("Actor Instantiated");
+            
             ReceiveAny(o =>
             {
                 Console.WriteLine("Received type: " + o.GetType().Name);

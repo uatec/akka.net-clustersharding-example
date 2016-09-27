@@ -35,7 +35,7 @@ namespace ConsoleApplication
         {
             Config config = File.ReadAllText("main.hocon");
  
-            var isPoint = Environment.GetEnvironmentVariable("point") ?? "no";
+            var isPoint = Environment.GetEnvironmentVariable("seed") ?? "no";
             if (!isPoint.Equals("yes"))
             {
                 config = ((Config)File.ReadAllText("follower.hocon")).WithFallback(config);
