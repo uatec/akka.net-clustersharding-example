@@ -1,6 +1,6 @@
 # Akka.NET Cluster Sharding Example
 
-This project is a worked example of the (Akka.Cluster.Sharding module documentation)[http://getakka.net/docs/clustering/cluster-sharding].
+This project is a worked example of the [Akka.Cluster.Sharding module documentation](http://getakka.net/docs/clustering/cluster-sharding).
 
 ## Prerequisites
 
